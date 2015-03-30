@@ -1,0 +1,143 @@
+body,
+html {
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 22px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+/* Parallax
+---------------------------------------------------------------*/
+
+.parallax-container {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.parallax-group {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.parallax-layer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.parallax-layer-fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+
+.parallax-layer-base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+
+.parallax-layer-back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+
+.parallax-layer-deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+
+.parallax-group {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.parallax-group-1 {
+    z-index: 3;
+}
+
+    .parallax-group-1 .parallax-layer-back {
+        /*background-image: url("");*/
+    }
+
+.parallax-group-2 {
+    z-index: 4;
+}
+
+    .parallax-group-2 .parallax-layer-base {
+        background-color: red;
+        /*background-image: url("");*/
+    }
+
+.parallax-group-3 {
+    z-index: 2;
+}
+
+    .parallax-group-3 .parallax-layer-deep {
+        /*background-image: url("");*/
+    }
+
+.parallax-group-4 {
+    z-index: 3;
+}
+
+    .parallax-group-4 .parallax-layer-base {
+        background-color: red;
+        /*background-image: url("");*/
+    }
+
+
+/* Slideout.js
+---------------------------------------------------------------*/
+
+.slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+}
+
+.slideout-panel {
+    position:relative;
+    z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
